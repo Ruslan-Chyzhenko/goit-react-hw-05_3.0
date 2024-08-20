@@ -6,15 +6,19 @@ import css from "./App.module.css";
 import Loader from "../Loader/Loader";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
-const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage"));
-const ContextMoviePage = lazy(() =>
-  import("../../pages/ContextMoviePage/ContextMoviePage")
+const PostsPage = lazy(() => import("../../pages/PostsPage/PostsPage"));
+const ContextExamplePage = lazy(() =>
+  import("../../pages/ContextExamplePage/ContextExamplePage")
 );
-const MovieDetailsPage = lazy(() =>
-  import("../../pages/MovieDetailsPage/MovieDetailsPage")
+const PostDetailsPage = lazy(() =>
+  import("../../pages/PostDetailsPage/PostDetailsPage")
 );
-const MovieComments = lazy(() => import("../MovieComments/MovieComments"));
-const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews"));
+const PostComments = lazy(() =>
+  import("../../components/PostComments/PostComments")
+);
+const PostReviews = lazy(() =>
+  import("../../components/PostReviews/PostReviews")
+);
 
 function App() {
   return (
@@ -37,7 +41,7 @@ function App() {
             className={({ isActive }) => clsx(css.link, isActive && css.active)}
             to="/context-example"
           >
-            Context Movie
+            Context Example
           </NavLink>
         </nav>
       </header>
@@ -45,11 +49,11 @@ function App() {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/posts" element={<MoviesPage />} />
-            <Route path="/context-example" element={<ContextMoviePage />} />
-            <Route path="/posts/:postId" element={<MovieDetailsPage />}>
-              <Route path="comments" element={<MovieComments />} />
-              <Route path="reviews" element={<MovieReviews />} />
+            <Route path="/posts" element={<PostsPage />} />
+            <Route path="/context-example" element={<ContextExamplePage />} />
+            <Route path="/posts/:postId" element={<PostDetailsPage />}>
+              <Route path="comments" element={<PostComments />} />
+              <Route path="reviews" element={<PostReviews />} />
             </Route>
           </Routes>
         </Suspense>

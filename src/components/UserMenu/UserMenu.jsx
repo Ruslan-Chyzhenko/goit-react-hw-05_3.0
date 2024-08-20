@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Loader from "../Loader/Loader";
+import Loader from "../../components/Loader/Loader";
 import { UserContext } from "../../context/UserContext";
 
 const UserMenu = () => {

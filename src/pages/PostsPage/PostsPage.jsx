@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 
-import Loader from "../components/Loader/Loader";
-import SearchPostsForm from "../components/SearchPostsForm/SearchPostsForm";
+import Loader from "../../components/Loader/Loader";
+import SearchPostsForm from "../../components/SearchPostsForm/SearchPostsForm";
 
-import { requestAllPosts, requestPostsBySearchValue } from "../services/api";
+import {
+  requestAllPosts,
+  requestPostsBySearchValue,
+} from "../../components/service/api";
 
 const PostsPage = () => {
   const [posts, setPosts] = useState(null);

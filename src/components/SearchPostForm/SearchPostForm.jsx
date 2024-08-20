@@ -1,9 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
-import css from "./SearchMovieForm.module.css";
+import css from "./SearchPostsForm.module.css";
 
-const SearchMovieValidationSchema = Yup.object().shape({
+const SearchPostsValidationSchema = Yup.object().shape({
   searchTerm: Yup.string()
     .required("Пошукове слово є обов'язковим")
     .min(2, "Пошукове слово має бути мінімум в 2 символи")
@@ -23,7 +23,7 @@ const SearchPostsForm = ({ onSearch, defaultSearchValue }) => {
     <Formik
       initialValues={INITIAL_VALUES}
       onSubmit={handleSubmit}
-      validationSchema={SearchMovieValidationSchema}
+      validationSchema={SearchPostsValidationSchema}
     >
       {({ errors }) => (
         <Form className={css.form}>
@@ -50,4 +50,4 @@ const SearchPostsForm = ({ onSearch, defaultSearchValue }) => {
   );
 };
 
-export default SearchMovieForm;
+export default SearchPostsForm;
