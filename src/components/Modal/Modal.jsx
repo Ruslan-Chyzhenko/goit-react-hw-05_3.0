@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import css from "./Modal.module.css";
 import { createPortal } from "react-dom";
-import AddProfileForm from "../AddProfileForm/AddProfileForm.jsx";
+// import AddProfileForm from "../AddProfileForm/AddProfileForm.jsx";
 
 /*
 Методи життєвого циклу.
